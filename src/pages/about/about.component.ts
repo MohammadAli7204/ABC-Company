@@ -18,61 +18,30 @@ export class AboutComponent {
     {
       title: '2017',
       description: 'ABC Company was founded with a vision to provide innovative engineering solutions to startups, focusing on reliability and affordability.',
-      images: [
-        'https://picsum.photos/seed/startup-1/500/500',
-        'https://picsum.photos/seed/startup-2/500/500',
-      ]
     },
     {
       title: '2018',
       description: 'We diversified our offerings to include legacy system migrations and ERP implementations, catering to small and medium-sized businesses.',
-      images: [
-        'https://picsum.photos/seed/erp-1/500/500',
-        'https://picsum.photos/seed/migration-1/500/500',
-      ]
     },
     {
       title: '2019',
       description: 'ABC Company expanded its reach by serving clients across multiple countries, building strong partnerships with multinational corporations.',
-      images: [
-        'https://picsum.photos/seed/global-1/500/500',
-        'https://picsum.photos/seed/global-2/500/500',
-        'https://picsum.photos/seed/global-3/500/500',
-        'https://picsum.photos/seed/global-4/500/500',
-      ]
     },
     {
       title: '2020',
       description: 'We introduced fully autonomous development teams, enabling clients to scale their projects with ease and efficiency.',
-       images: [
-        'https://picsum.photos/seed/teams-1/500/500',
-        'https://picsum.photos/seed/teams-2/500/500',
-      ]
     },
     {
       title: '2021',
       description: 'To address growing digital threats, we added comprehensive cybersecurity services, safeguarding our clients\' assets worldwide.',
-       images: [
-        'https://picsum.photos/seed/cyber-1/500/500',
-        'https://picsum.photos/seed/cyber-2/500/500',
-      ]
     },
     {
       title: '2023',
       description: 'With over 300 successful projects delivered globally, we solidified our reputation as a leading provider of tailored engineering solutions.',
-       images: [
-        'https://picsum.photos/seed/projects-1/500/500',
-        'https://picsum.photos/seed/projects-2/500/500',
-        'https://picsum.photos/seed/projects-3/500/500',
-      ]
     },
     {
       title: '2024',
       description: 'ABC Company continues to innovate, serving startups, SMBs, and enterprises with a focus on scalable solutions, global collaboration, and unmatched reliability.',
-       images: [
-        'https://picsum.photos/seed/partner-1/500/500',
-        'https://picsum.photos/seed/partner-2/500/500',
-      ]
     }
   ]);
 

@@ -9,7 +9,7 @@
         <div class="bg-white p-10 rounded-2xl border border-slate-200/60 text-center">
            <img [ngSrc]="item.imageUrl" width="500" height="350" [alt]="item.title + ' illustration'" class="rounded-md w-full object-contain mb-6 h-40">
           <h3 class="text-xl font-semibold text-blue-600">{{ item.title }}</h3>
-          <a href="#" class="mt-2 text-gray-700 hover:text-blue-600 hover:underline">{{ item.detail }}</a>
+          <a [href]="item.link" target="_blank" rel="noopener noreferrer" class="mt-2 text-gray-700 hover:text-blue-600 hover:underline">{{ item.detail }}</a>
         </div>
       }
     </div>

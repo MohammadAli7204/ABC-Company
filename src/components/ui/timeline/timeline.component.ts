@@ -1,17 +1,15 @@
 import { ChangeDetectionStrategy, Component, ElementRef, AfterViewInit, OnDestroy, ViewChild, input, signal, effect, untracked } from '@angular/core';
-import { NgOptimizedImage } from '@angular/common';
 
 export interface TimelineEntry {
   title: string;
   description: string;
-  images: string[];
 }
 
 @Component({
   selector: 'app-timeline',
   templateUrl: './timeline.component.html',
   standalone: true,
-  imports: [NgOptimizedImage],
+  imports: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '(window:scroll)': 'onScroll()'

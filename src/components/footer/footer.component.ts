@@ -26,8 +26,8 @@ export class FooterComponent {
       links: [
         { name: "About", href: "/about" },
         { name: "Team", href: "/about" },
-        { name: "Blog", href: "#" },
-        { name: "Careers", href: "#" },
+        { name: "Blog", href: "/contact" },
+        { name: "Careers", href: "/contact" },
       ],
     },
     {
@@ -35,23 +35,23 @@ export class FooterComponent {
       links: [
         { name: "Help", href: "/contact" },
         { name: "Contact", href: "/contact" },
-        { name: "Advertise", href: "#" },
-        { name: "Privacy", href: "#" },
+        { name: "Advertise", href: "/contact" },
+        { name: "Privacy", href: "/about" },
       ],
     },
   ]);
 
   socialLinks = signal([
-    { icon: 'instagram', href: "#", label: "Instagram" },
-    { icon: 'facebook', href: "#", label: "Facebook" },
-    { icon: 'twitter', href: "#", label: "Twitter" },
-    { icon: 'linkedin', href: "#", label: "LinkedIn" },
-    { icon: 'github', href: "#", label: "GitHub" },
-    { icon: 'youtube', href: "#", label: "YouTube" }
+    { icon: 'instagram', href: "https://instagram.com", label: "Instagram" },
+    { icon: 'facebook', href: "https://facebook.com", label: "Facebook" },
+    { icon: 'twitter', href: "https://twitter.com", label: "Twitter" },
+    { icon: 'linkedin', href: "https://linkedin.com", label: "LinkedIn" },
+    { icon: 'github', href: "https://github.com", label: "GitHub" },
+    { icon: 'youtube', href: "https://youtube.com", label: "YouTube" }
   ]);
   
   legalLinks = signal([
-    { name: "Terms and Conditions", href: "#" },
-    { name: "Privacy Policy", href: "#" },
+    { name: "Terms and Conditions", href: "/about" },
+    { name: "Privacy Policy", href: "/about" },
   ]);
 }
