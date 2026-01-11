@@ -1,0 +1,70 @@
+<!-- Get In Touch Hero -->
+<section class="relative bg-[#F4F5F5] pt-48 pb-24 text-gray-800 overflow-hidden">
+  <app-dot-background class="absolute inset-0 -z-10"></app-dot-background>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] max-w-3xl h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(255,224,130,0.35),transparent_70%)] blur-3xl z-0"></div>
+  <div class="container mx-auto px-4 z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-6xl lg:text-8xl font-semibold tracking-tighter">Get In Touch</h1>
+      <p class="mt-4 text-lg text-gray-600">Let's create the future of your business together.</p>
+       <p class="mt-8 text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Whether you need consulting, development, or robust digital solutions, ABC Company is here to help.
+      </p>
+      <div class="mt-8 flex items-center gap-6 justify-center">
+          <app-animated-button text="Contact Us" [routerLink]="'/contact'"></app-animated-button>
+          <a routerLink="/services" class="text-sm font-medium text-gray-700 hover:text-gray-900 underline">
+            View Our Services
+          </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Our Expertise / Contact Form -->
+<section class="py-24 sm:py-32 bg-white">
+  <div class="container mx-auto px-4 max-w-4xl">
+    <div class="text-left">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Our Expertise</h2>
+      <p class="mt-4 text-lg text-gray-600">We specialize in delivering tailored solutions to address your business needs across these key areas:</p>
+    </div>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="mt-12 space-y-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+          <input type="text" id="firstName" formControlName="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+        </div>
+        <div>
+          <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+          <input type="text" id="lastName" formControlName="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+        </div>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service</label>
+          <select id="service" formControlName="service" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+            <option disabled>Select Service</option>
+            @for(service of services; track service) {
+              <option [value]="service">{{ service }}</option>
+            }
+          </select>
+        </div>
+        <div>
+          <label for="budget" class="block text-sm font-medium text-gray-700 mb-1">Budget</label>
+          <input type="text" id="budget" formControlName="budget" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+        </div>
+      </div>
+      <div>
+        <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject</label>
+        <input type="text" id="subject" formControlName="subject" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
+      </div>
+      <div>
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="message" formControlName="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500"></textarea>
+      </div>
+      <div>
+        <app-animated-button text="Send Message" type="submit" [disabled]="!contactForm.valid"></app-animated-button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<app-contact></app-contact>

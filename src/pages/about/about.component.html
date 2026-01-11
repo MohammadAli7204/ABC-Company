@@ -1,0 +1,143 @@
+<!-- About Us Hero -->
+<section class="relative bg-[#F4F5F5] pt-48 pb-24 text-gray-800 overflow-hidden">
+  <app-dot-background class="absolute inset-0 -z-10"></app-dot-background>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] max-w-3xl h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(255,224,130,0.35),transparent_70%)] blur-3xl z-0"></div>
+  <div class="container mx-auto px-4 z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-6xl lg:text-8xl font-semibold tracking-tighter">About Us</h1>
+      <p class="mt-4 text-lg text-gray-600">Driving Innovation, Empowering Businesses Worldwide</p>
+    </div>
+    <div class="mt-16 max-w-4xl mx-auto text-center">
+      <p class="text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        At ABC Company, we are more than just a service provider—we're your trusted partner in engineering success. With decades of experience and a commitment to excellence, we deliver tailored solutions that help businesses, from startups to global enterprises, achieve their goals.
+      </p>
+      <div class="mt-8 flex items-center gap-6 justify-center">
+          <app-animated-button text="Get a consultation" [routerLink]="'/contact'"></app-animated-button>
+          <a routerLink="/case-studies" class="text-sm font-medium text-gray-700 hover:text-gray-900 underline">
+            View Case Studies
+          </a>
+        </div>
+    </div>
+  </div>
+</section>
+
+<!-- New Timeline Component -->
+<app-timeline [data]="timelineData()"></app-timeline>
+
+<!-- What We Stand For -->
+<section class="py-24 sm:py-32 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">What We Stand For</h2>
+      <p class="mt-4 text-lg text-gray-600">Our unwavering values shape our approach to delivering impactful solutions.</p>
+    </div>
+    <div class="mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      @for(value of values(); track value.title) {
+        <div class="text-center">
+          <div class="bg-white p-4 rounded-lg border border-gray-200/80 mb-6">
+            <img [ngSrc]="value.imageUrl" width="500" height="300" [alt]="value.title + ' illustration'" class="rounded-md w-full object-cover">
+          </div>
+          <h3 class="text-xl font-semibold text-blue-600">{{ value.title }}</h3>
+          <p class="mt-2 text-gray-600">{{ value.description }}</p>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Meet Our Team -->
+<section class="py-24 sm:py-32 bg-white">
+  <div class="container mx-auto px-4">
+    <!-- Header -->
+    <div class="max-w-3xl">
+      <h2 class="text-gray-900 text-4xl font-semibold md:text-5xl tracking-tight">
+        Meet Our Team
+      </h2>
+      <p class="text-gray-600 mt-4 text-lg leading-relaxed">
+        Our talented professionals bring diverse expertise and passion to every project. Together,
+        we collaborate to deliver exceptional results and innovative solutions for our clients.
+      </p>
+      <a routerLink="#" class="mt-6 h-9 rounded-full pr-2 inline-flex items-center justify-center text-sm font-medium border border-gray-300 bg-white hover:bg-gray-100 hover:text-gray-800 px-4 py-2 transition-colors">
+        We're hiring
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1 opacity-60"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+
+    <!-- Members Grid -->
+    <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 md:gap-6">
+      @for(member of teamMembers(); track member.name) {
+        <div class="relative group">
+          <!-- Trigger Chip -->
+          <div class="grid cursor-pointer grid-cols-[auto_1fr] items-center gap-3 rounded-lg border border-gray-200/80 bg-white p-3 shadow-sm transition-colors hover:bg-gray-50">
+            <img [ngSrc]="member.src" [alt]="member.name" width="40" height="40" class="rounded-full w-10 h-10 border shadow ring-1 ring-gray-900/10">
+            <span class="text-gray-900 block truncate text-[15px] font-semibold">
+              {{ member.name }}
+            </span>
+          </div>
+
+          <!-- Popover Card -->
+          <div class="absolute top-full left-0 mt-2 z-20 w-80 rounded-lg p-4 border bg-white shadow-lg ring-1 ring-gray-900/5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 transform group-hover:scale-100 scale-95 origin-top-left">
+            <div class="space-y-3">
+              <div class="flex items-start justify-between gap-3">
+                <div class="flex items-center gap-3">
+                  <img [ngSrc]="member.src" [alt]="member.name" width="48" height="48" class="rounded-lg w-12 h-12 border shadow ring-1 ring-gray-900/10">
+                  <div class="min-w-0">
+                    <div class="text-gray-900 truncate text-sm font-semibold sm:text-base">
+                      {{ member.name }}
+                    </div>
+                    <div class="text-gray-600 truncate text-xs sm:text-sm">
+                      {{ member.role }}
+                    </div>
+                  </div>
+                </div>
+                <a [href]="'https://x.com/' + member.twitter" target="_blank" [attr.aria-label]="member.name + ' on X (Twitter)'" class="shrink-0 p-2 rounded-md text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Join Us -->
+<section class="py-24 sm:py-32 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Join Us</h2>
+      <p class="mt-4 text-lg text-gray-600">Looking for a career where you can innovate and make an impact? ABC Company is always on the lookout for passionate individuals to join our growing team.</p>
+    </div>
+    <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for(item of joinUsItems(); track item.title) {
+        <div class="text-center">
+          <div class="bg-white p-4 rounded-lg border border-gray-200/80 mb-6">
+            <img [ngSrc]="item.imageUrl" width="500" height="300" [alt]="item.title + ' illustration'" class="rounded-md w-full object-cover">
+          </div>
+          <h3 class="text-xl font-semibold">{{ item.title }}</h3>
+          <p class="mt-2 text-gray-600">{{ item.description }}</p>
+        </div>
+      }
+    </div>
+    <div class="text-center mt-16">
+      <a href="#" class="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-blue-800 group">
+        Join our team
+        <span class="ml-2 transition-transform group-hover:translate-x-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Quote Section -->
+<section class="py-24 sm:py-32 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="text-3xl md:text-4xl font-semibold text-gray-800 leading-tight">“Our focus is on creating products and services that empower businesses, streamline operations, and foster growth in the digital era.”</p>
+      <p class="mt-6 text-lg text-gray-600">Panduka Weerasekara</p>
+      <p class="text-blue-600">Co-Founder, ABC Company</p>
+    </div>
+  </div>
+</section>
+
+<app-contact></app-contact>

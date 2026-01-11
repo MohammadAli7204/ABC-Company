@@ -1,0 +1,23 @@
+<section class="py-20 sm:py-28 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Success Stories</h2>
+      <p class="mt-4 text-lg text-gray-600">Explore how we've transformed challenges into opportunities, driving success for businesses across industries worldwide.</p>
+    </div>
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for(story of stories(); track story.title) {
+        <div class="bg-white p-8 rounded-2xl border border-gray-200/80 shadow-lg shadow-slate-900/5 hover:-translate-y-1 transition-transform">
+          <h3 class="text-xl font-semibold text-blue-600">{{ story.title }}</h3>
+          <p class="mt-4 text-gray-700 leading-relaxed italic">"{{ story.text }}"</p>
+          <p class="mt-6 font-medium text-gray-800">{{ story.author }}</p>
+        </div>
+      }
+    </div>
+    <div class="text-center mt-16">
+        <a routerLink="/case-studies" class="text-lg text-gray-800 font-medium hover:text-blue-600 transition-colors underline-offset-4 hover:underline inline-flex items-center">
+        View Case Studies
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+      </a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,60 @@
+<!-- Case Studies Hero -->
+<section class="relative bg-[#F4F5F5] pt-48 pb-24 text-gray-800 overflow-hidden">
+  <app-dot-background class="absolute inset-0 -z-10"></app-dot-background>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[50vw] max-w-3xl h-[400px] bg-[radial-gradient(ellipse_at_center,rgba(255,224,130,0.35),transparent_70%)] blur-3xl z-0"></div>
+  <div class="container mx-auto px-4 z-10">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-6xl lg:text-8xl font-semibold tracking-tighter">Case Studies</h1>
+      <p class="mt-4 text-lg text-gray-600">Proven Success Across Industries</p>
+      <p class="mt-8 text-gray-600 leading-relaxed max-w-2xl mx-auto">
+        Explore how ABC Company has empowered businesses like yours with innovative engineering solutions that deliver measurable results.
+      </p>
+      <div class="mt-8 flex items-center gap-6 justify-center">
+        <app-animated-button text="Get a consultation" [routerLink]="'/contact'"></app-animated-button>
+        <a routerLink="/case-studies" class="text-sm font-medium text-gray-700 hover:text-gray-900 underline">
+          View Case Studies
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured Case Studies -->
+<section class="py-24 sm:py-32 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="text-left max-w-4xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Featured Case Studies</h2>
+      <p class="mt-4 text-lg text-gray-600">Discover how our tailored solutions have transformed businesses across industries.</p>
+    </div>
+    <div class="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      @for(study of caseStudies(); track study.title) {
+        <div class="bg-slate-50/50 p-6 rounded-2xl border border-slate-200/60">
+            <div class="bg-white p-4 rounded-lg border border-gray-200/80 mb-6">
+                <img [ngSrc]="study.imageUrl" width="600" height="400" [alt]="study.title" class="rounded-md w-full object-cover">
+            </div>
+            <h3 class="text-xl font-semibold text-blue-600">{{ study.title }}</h3>
+            <div class="mt-4">
+                <p class="font-semibold text-gray-800">Challenge</p>
+                <p class="mt-1 text-gray-600 text-sm leading-relaxed">{{ study.challenge }}</p>
+            </div>
+            <div class="mt-4">
+                <p class="font-semibold text-gray-800">Solution</p>
+                <p class="mt-1 text-gray-600 text-sm leading-relaxed">{{ study.solution }}</p>
+            </div>
+            <a href="#" class="mt-6 inline-flex items-center text-blue-600 font-medium hover:text-blue-800 group">
+                Read Full Case Study
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-1.5 transition-transform group-hover:translate-x-1"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+        </div>
+      }
+    </div>
+    <div class="text-center mt-20">
+      <a href="#" class="inline-flex items-center text-blue-600 font-semibold text-lg hover:text-blue-800 group">
+        View More
+        <span class="ml-2 transition-transform group-hover:translate-x-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<app-contact></app-contact>

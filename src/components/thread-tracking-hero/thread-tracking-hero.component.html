@@ -1,0 +1,40 @@
+<div class="relative w-full h-screen overflow-hidden bg-gray-50 text-gray-800">
+  <canvas #canvas class="absolute inset-0 w-full h-full" style="cursor: none;"></canvas>
+  
+  <div class="relative z-10 container mx-auto px-4 min-h-screen flex flex-col justify-center py-20">
+    <div class="flex-grow flex items-center">
+      <div class="w-full grid md:grid-cols-2 gap-12 items-center">
+        <!-- Left Column -->
+        <div>
+          <h1 class="text-5xl md:text-7xl font-bold text-gray-900 tracking-tighter leading-tight">
+            Empowering<br>Global<br>Businesses
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 max-w-md">
+            From startups to multinational corporations, we deliver scalable, reliable, and cost-effective services to address your unique challenges.
+          </p>
+        </div>
+
+        <!-- Right Column -->
+        <div class="md:pl-10">
+          <p class="text-lg text-gray-600">
+            Transform your business with expert engineering, seamless migrations, and innovative digital solutions, no matter where you are.
+          </p>
+          <div class="mt-8 flex items-center gap-6">
+            <a routerLink="/contact" class="inline-flex items-center justify-center bg-gray-900 text-white px-6 py-3 rounded-lg text-sm font-medium hover:bg-gray-800 transition-colors shadow-md">
+              Get a consultation
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a routerLink="/case-studies" class="text-sm font-medium text-gray-700 hover:text-gray-900 underline">
+              View Case Studies
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clients Section -->
+    <div class="w-full pt-12">
+      <app-clients></app-clients>
+    </div>
+  </div>
+</div>

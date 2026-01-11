@@ -1,0 +1,30 @@
+<app-thread-tracking-hero></app-thread-tracking-hero>
+
+<app-expertise></app-expertise>
+<app-impact></app-impact>
+
+<app-container-scroll>
+  <div title class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Why Choose ABC Company?</h2>
+      <p class="mt-4 text-lg text-gray-600">We provide end-to-end AI solutions to help businesses across industries overcome challenges, innovate, and scale.</p>
+  </div>
+  <div class="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for(reason of reasons(); track reason.title) {
+        <div class="bg-slate-50/50 p-8 rounded-2xl border border-slate-200/60 h-full text-center">
+          <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+            @switch (reason.icon) {
+              @case ('flask-conical') { <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 9.31V2"/><path d="M8.5 2h7"/><path d="M14 9.31C16.57 10.4 18 12.85 18 15.5V22H6v-6.5c0-2.65 1.43-5.1 4-6.19Z"/><path d="M7 12h10"/></svg> }
+              @case ('network') { <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="16" y="16" width="6" height="6" rx="1"/><rect x="2" y="16" width="6" height="6" rx="1"/><rect x="9" y="2" width="6" height="6" rx="1"/><path d="M5 16v-3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v3"/><path d="M12 12V8"/></svg> }
+              @case ('shield') { <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> }
+            }
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900">{{ reason.title }}</h3>
+          <p class="mt-2 text-gray-600">{{ reason.description }}</p>
+        </div>
+      }
+    </div>
+</app-container-scroll>
+
+<app-success-stories></app-success-stories>
+<app-faq></app-faq>
+<app-contact></app-contact>

@@ -1,0 +1,17 @@
+<section class="py-24 sm:py-32 bg-slate-50">
+  <div class="container mx-auto px-4">
+    <div class="text-center max-w-3xl mx-auto">
+      <h2 class="text-4xl md:text-5xl font-semibold tracking-tight">Get in Touch Today</h2>
+      <p class="mt-4 text-lg text-gray-600">Let's create the future of your business together. Whether you need consulting, development, or robust digital solutions, ABC Company is here to help.</p>
+    </div>
+    <div class="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8">
+      @for(item of contactItems(); track item.title) {
+        <div class="bg-white p-10 rounded-2xl border border-slate-200/60 text-center">
+           <img [ngSrc]="item.imageUrl" width="500" height="350" [alt]="item.title + ' illustration'" class="rounded-md w-full object-contain mb-6 h-40">
+          <h3 class="text-xl font-semibold text-blue-600">{{ item.title }}</h3>
+          <a href="#" class="mt-2 text-gray-700 hover:text-blue-600 hover:underline">{{ item.detail }}</a>
+        </div>
+      }
+    </div>
+  </div>
+</section>
